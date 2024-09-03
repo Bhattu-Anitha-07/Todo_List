@@ -28,6 +28,7 @@ let categories = [
     {
       title: "Personal",
       img: "teenage.png",
+      gender: "",
     },
     {
       title: "Work",
@@ -419,3 +420,41 @@ getLocal();
 calculateTotal(); 
 // renderCategories();
 renderTasks();
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Display the popup when the page loads
+  const popup = document.getElementById('popup');
+  popup.style.visibility = 'visible'; // Show the popup
+
+  // Handle the form submission
+  document.getElementById('userForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const gender = document.getElementById('gender').value;
+      
+      // Update welcome message
+      document.querySelector('.welcome h1').textContent = `Hello ${name}`;
+      
+      // Change the icon based on gender
+      const imgElement = document.querySelector('.welcome .img img');
+      if (gender === 'female') {
+          imgElement.src = 'images/teenage.png';
+      } else {
+          imgElement.src = 'images/boy.png';
+      }
+
+      // Update only the "Personal" category image based on gender
+      const categoryElements = document.querySelectorAll('.category');
+      categoryElements.forEach(element => {
+          const categoryTitle = element.querySelector('.content h1').textContent;
+          if (categoryTitle === "Personal") {
+              const imgTag = element.querySelector('img');
+              imgTag.src = gender === 'female' ? 'images/teenage.png' : 'images/boy.png';
+          }
+      });
+
+      // Hide the popup
+      popup.style.visibility = 'hidden';
+  });
+});
