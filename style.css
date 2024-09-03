@@ -117,7 +117,6 @@ body{
 .categories-wrapper{
     margin-top: 1rem;
     height: calc(100% - 8rem);
-    /* background-color: red; */
     padding: 0 20px;
     padding-bottom: 20px;
     overflow: auto;
@@ -270,10 +269,6 @@ body{
     opacity: 0;
     transition: all 0.3s;
 }
-
-/* .task:hover .checkmark svg {
-    opacity: 1;
-} */
 
 .task .checkmark svg path {
     stroke-width: 3;
@@ -454,7 +449,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    visibility: hidden; /* Start hidden */
+    visibility: hidden; 
 }
 
 .popup-content {
