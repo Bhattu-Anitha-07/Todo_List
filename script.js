@@ -242,7 +242,6 @@ const calculateTotal = () => {
       div.addEventListener("click", () => {
         wrapper.classList.add("show-category");
         selectedCategory = category;
-        // updateTotals();
         categoryTitle.innerHTML = category.title;
         categoryImg.src = `images/${category.img}`;
         calculateTotal();
@@ -377,8 +376,6 @@ const getLocal = () => {
   }
 }
 
-//add task
-
 //render 
 const categorySelect = document.querySelector("#category-select");
 const cancelBtn = document.querySelector(".cancel-btn");
@@ -418,15 +415,13 @@ categories.forEach((category) => {
 
 getLocal();
 calculateTotal(); 
-// renderCategories();
 renderTasks();
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Display the popup when the page loads
+  // Display the popup 
   const popup = document.getElementById('popup');
-  popup.style.visibility = 'visible'; // Show the popup
+  popup.style.visibility = 'visible'; 
 
-  // Handle the form submission
   document.getElementById('userForm').addEventListener('submit', function (e) {
       e.preventDefault();
       
@@ -444,7 +439,6 @@ document.addEventListener('DOMContentLoaded', function () {
           imgElement.src = 'images/boy.png';
       }
 
-      // Update only the "Personal" category image based on gender
       const categoryElements = document.querySelectorAll('.category');
       categoryElements.forEach(element => {
           const categoryTitle = element.querySelector('.content h1').textContent;
@@ -454,7 +448,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       });
 
-      // Hide the popup
       popup.style.visibility = 'hidden';
   });
 });
